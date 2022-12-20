@@ -1,0 +1,36 @@
+html {
+    scroll-behavior: smooth
+}
+
+* {
+    font-family: 'Kanit', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 5px
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffa53f;
+    border-radius: 2px
+}
+
+::-webkit-scrollbar-track {
+    background: #121212
+}
+
+@media(prefers-color-scheme:dark) {
+    body {
+        background-color: #202023;
+        color: #fff
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #ffa53f;
+        border-radius: 2px
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #121212
+    }
+}

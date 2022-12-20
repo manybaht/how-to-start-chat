@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" href="https://cdn.jsdelivr.net/gh/manybaht/manybaht.github.io@main/storages/images/avatar.webp">
+	<meta name="description" content="เรามาสร้างความประทับใจแรก ด้วยข้อความที่ดูโปร">
+	<meta name="keywords" content="howtostartchat.manybahtpage.com">
+	<meta property="og:title" content="วิธีเริ่มแชท">
+	<meta property="og:url" content="https://howtostartchat.manybahtpage.com">
+	<meta property="og:description" content="เรามาสร้างความประทับใจแรก ด้วยข้อความที่ดูโปร">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://cdn.jsdelivr.net/gh/manybaht/manybaht.github.io@main/storages/images/laibaht.webp">
+    <title>วิธีเริ่มแชท</title>
+    <link href="https://cdn.tailwindcss.com" rel="preload" as="script">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'media', // or 'media' or 'class'
+            content: [],
+            theme: {
+                extend: {},
+            },
+            plugins: [],
+        }
+    </script>
+    <link rel="stylesheet" href="./assets/default.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="grid h-screen place-items-center container mx-auto p-4">
+        <div class="max-w-lg w-full">
+            <div class="text-center mb-10">
+                &nbsp;
+                &nbsp;
+                <h1 class="text-3xl font-bold text-gray-900 dark:text-white">วิธีเริ่มแชท</h1>
+                <p class="text-gray-500 dark:text-gray-400">เรามาสร้างความประทับใจแรก ด้วยข้อความที่ดูโปร</p>
+            </div>
+            <form onsubmit="return donate(event)">
+                <div class="mb-6">
+                    <label for="prefix" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">สวัสดี...</label>
+                    <select id="prefix"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#23272a] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                        <option value="ครับ">ครับ</option>
+                        <option value="ค่ะ">ค่ะ</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label for="whattodo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">อยากจะ...</label>
+                    <select id="whattodo"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#23272a] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                        <option value="ติดต่อ">ติดต่อ</option>
+                        <option value="สอบถาม">สอบถาม</option>
+                        <option value="ตามเรื่อง">ตามเรื่อง</option>
+                        <option value="ทราบว่า">ทราบว่า</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label for="question" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">เรื่อง...</label>
+                    <input type="text" id="question"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#23272a] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="การลงโฆษณาในเพจหลายบาท ไม่ทราบว่าต้องทำยังไงบ้าง..." required />
+                </div>
+
+                <p class="text-center" id="complie">Tip : การเริ่มคุยที่ดีไม่ควรรอให้อีกฝ่ายถามกลับว่าติดต่อเรื่องอะไร</p>
+
+                <button type="submit" onclick="copy();"
+                    class="mt-4 text-white w-full bg-[#FF9119] hover:bg-[#FF9119]/80 focus:ring-4 focus:outline-none focus:ring-[#FF9119]/50 font-medium rounded-lg text-sm px-4 py-2 text-center items-center dark:hover:bg-[#FF9119]/80 dark:focus:ring-[#FF9119]/40 mr-2 mb-2">
+                    ก็อปข้อความ
+                </button>
+            </form>
+        </div>
+    </div>
+    <script>
+        $('form').find('*').on('change', function() {
+            const prefix = document.getElementById('prefix').value;
+            const whattodo = document.getElementById('whattodo').value;
+            const question = document.getElementById('question').value;
+            const content = document.getElementById('complie');
+            content.textContent = 'สวัสดี' + prefix + ' อยากจะ' + whattodo + 'เรื่อง ' + question + ' ขอบคุณมาก' + prefix; 
+        });
+
+        function copy() {
+            const content = document.getElementById('complie').textContent;
+            navigator.clipboard.writeText(content);
+        }
+    </script>
+</body>
+</html>
